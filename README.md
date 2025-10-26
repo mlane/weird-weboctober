@@ -224,7 +224,7 @@ _[Link](https://weird-weboctober.vercel.app/30-deprecated/)_
 On the final night, the air grows cold.  
 Flickers in the corner of my vision reveal pale shapes watching me.  
 October ends, but the world stays haunted.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/31-spooky/)_
 
 ---
 

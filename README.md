@@ -202,7 +202,7 @@ _[Link](https://weird-weboctober.vercel.app/27-spell/)_
 **Day 28 - Tables**  
 A grid stretches across the horizon, rigid and endless.  
 Each row leads to another row, another row, another row.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/28-tables/)_
 
 ---
 

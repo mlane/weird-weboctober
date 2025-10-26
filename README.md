@@ -188,7 +188,7 @@ _[Link](https://weird-weboctober.vercel.app/25-empty/)_
 **Day 26 - Texture**  
 The ground beneath me changes feel with each step - stone, grass, dirt, static.  
 Every surface is louder than the silence.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/26-texture/)_
 
 ---
 

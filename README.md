@@ -209,7 +209,7 @@ _[Link](https://weird-weboctober.vercel.app/28-tables/)_
 **Day 29 - Surprise**  
 Something jumps out of the shadows - confetti, or a ghost, or both.  
 The world laughs at me, not with me.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/29-surprise/)_
 
 ---
 

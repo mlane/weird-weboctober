@@ -195,7 +195,7 @@ _[Link](https://weird-weboctober.vercel.app/26-texture/)_
 **Day 27 - Spell**  
 I whisper a word and it glows in the air.  
 Letters scatter, reform, and shape reality around me.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/27-spell/)_
 
 ---
 

@@ -216,7 +216,7 @@ _[Link](https://weird-weboctober.vercel.app/29-surprise/)_
 **Day 30 - Deprecated**  
 Outdated code hangs from the sky like broken neon signs.  
 Marquees scroll, fonts clash, the whole world feels abandoned.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/30-deprecated/)_
 
 ---
 

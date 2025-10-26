@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Deprecated</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 30 — Outdated code hangs from the sky like neon wreckage. One word persists: CODE."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/30-deprecated/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Deprecated" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', 'Courier New', monospace;
+      }
+
+      body {
+        background: #010101;
+        color: #0f0;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .blink {
+        animation: blink 1s step-end infinite;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .fadeout .terminal {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .line {
+        opacity: 0.9;
+        white-space: pre;
+      }
+
+      .terminal {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(0, 255, 0, 0.1);
+        cursor: pointer;
+        height: 280px;
+        overflow: hidden;
+        padding: 20px;
+        width: 480px;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="terminal" class="terminal"></div>
+    </main>
+    <script>
+      const terminal = document.getElementById('terminal')
+      const lines = [
+        '> INIT SYSTEM...',
+        '> LOADING MODULES...',
+        '> WARNING: function deprecated()',
+        '> executing legacy script...',
+        '> compiling...',
+        '> compiling...',
+        '> compiling...',
+        '> ERROR: undefined signal',
+      ]
+      let index = 0
+      let revealed = false
+
+      function printLine() {
+        if (revealed) return
+
+        if (index < lines.length) {
+          const div = document.createElement('div')
+          div.className = 'line'
+          div.textContent = lines[index]
+          terminal.appendChild(div)
+          index++
+          const delay = 600 + Math.random() * 600
+          setTimeout(printLine, delay)
+        } else {
+          setTimeout(() => {
+            terminal.innerHTML += "<div class='line blink'>_</div>"
+          }, 800)
+        }
+      }
+
+      terminal.addEventListener('click', () => {
+        if (revealed) return
+
+        revealed = true
+        terminal.parentElement.classList.add('fadeout')
+        setTimeout(() => {
+          terminal.outerHTML = "<div class='clue'>CODE</div>"
+        }, 1000)
+      })
+
+      setTimeout(printLine, 1000)
+    </script>
+  </body>
+</html>

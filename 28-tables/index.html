@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Weird Web October – Counter</title>
+    <title>Weird Web October – Tables</title>
     <meta
       name="description"
-      content="Captain’s Log, Day 24 — Numbers climb toward nothing. The system tallies itself endlessly: COUNT."
+      content="Captain’s Log, Day 28 — Endless grids collapse to one word: finality. The system flatlines: DEAD."
     />
     <meta name="author" content="Marcus Lane" />
     <link rel="stylesheet" href="../css/normalize.min.css" />
@@ -14,10 +14,10 @@
     <link
       rel="preload"
       as="fetch"
-      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/24-counter/"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/28-tables/"
     />
     <link rel="octo:octothorpes" href="weirdweboctober" />
-    <link rel="octo:octothorpes" href="Counter" />
+    <link rel="octo:octothorpes" href="Tables" />
     <link
       rel="icon"
       type="image/png"
@@ -39,32 +39,40 @@
       body {
         align-items: center;
         background: #000;
-        color: #0ff;
+        color: #fff;
         display: flex;
         height: 100vh;
         justify-content: center;
         overflow: hidden;
       }
 
+      .cell {
+        background: rgba(255, 255, 255, 0.05);
+        transition: background 0.2s ease, opacity 0.4s ease;
+      }
+
       .clue {
         animation: fadein 1s forwards;
-        color: #fff;
         font-size: 1.5rem;
         opacity: 0;
         text-align: center;
       }
 
-      .counter {
-        cursor: pointer;
-        font-size: 3rem;
-        font-weight: bold;
-        letter-spacing: 0.05em;
-        transition: opacity 0.6s ease;
-      }
-
-      .fadeout .counter {
+      .fadeout .tables {
         opacity: 0;
         transition: opacity 1s ease;
+      }
+
+      .tables {
+        cursor: pointer;
+        display: grid;
+        gap: 2px;
+        grid-template-columns: repeat(8, 40px);
+        grid-template-rows: repeat(8, 40px);
+      }
+
+      .tables.glitch .cell {
+        background: rgba(255, 0, 0, 0.2);
       }
 
       @keyframes fadein {
@@ -76,40 +84,41 @@
   </head>
   <body>
     <main>
-      <div id="counter" class="counter">000000</div>
+      <div id="tables" class="tables"></div>
     </main>
     <script>
-      const counter = document.getElementById('counter')
-      let value = 0
+      const tables = document.getElementById('tables')
+      const total = 64
       let revealed = false
 
-      function tick() {
-        if (revealed) return
-
-        value++
-        counter.textContent = value.toString().padStart(6, '0')
-
-        if (value % 333 === 0) {
-          counter.style.color = '#f0f'
-        } else {
-          counter.style.color = '#0ff'
-        }
-
-        const delay = 50 + Math.random() * 100
-        setTimeout(tick, delay)
+      for (let index = 0; index < total; index++) {
+        const cell = document.createElement('div')
+        cell.className = 'cell'
+        tables.appendChild(cell)
       }
 
-      counter.addEventListener('click', () => {
+      function glitch() {
+        if (revealed) return
+
+        tables.classList.add('glitch')
+        setTimeout(() => {
+          tables.classList.remove('glitch')
+          const next = 5000 + Math.random() * 3000
+          setTimeout(glitch, next)
+        }, 400)
+      }
+
+      tables.addEventListener('click', () => {
         if (revealed) return
 
         revealed = true
-        counter.parentElement.classList.add('fadeout')
+        tables.parentElement.classList.add('fadeout')
         setTimeout(() => {
-          counter.outerHTML = "<div class='clue'>COUNT</div>"
+          tables.outerHTML = "<div class='clue'>DEAD</div>"
         }, 1000)
       })
 
-      setTimeout(tick, 1000)
+      setTimeout(glitch, 2000)
     </script>
   </body>
 </html>

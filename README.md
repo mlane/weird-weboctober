@@ -181,7 +181,7 @@ _[Link](https://weird-weboctober.vercel.app/24-counter/)_
 **Day 25 - Empty**  
 The world falls silent. Just a single dot on the horizon.  
 Am I supposed to follow it?  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/25-empty/)_
 
 ---
 

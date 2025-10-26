@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weird Web October – Counter</title>
+    <meta
+      name="description"
+      content="Captain’s Log, Day 24 — Numbers climb toward nothing. The system tallies itself endlessly: COUNT."
+    />
+    <meta name="author" content="Marcus Lane" />
+    <link rel="stylesheet" href="../css/normalize.min.css" />
+    <link rel="stylesheet" href="../css/base.min.css" />
+    <link
+      rel="preload"
+      as="fetch"
+      href="https://octothorp.es/?uri=https://weird-weboctober.vercel.app/24-counter/"
+    />
+    <link rel="octo:octothorpes" href="weirdweboctober" />
+    <link rel="octo:octothorpes" href="Counter" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Weird Web October" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #000;
+        color: #0ff;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .clue {
+        animation: fadein 1s forwards;
+        color: #fff;
+        font-size: 1.5rem;
+        opacity: 0;
+        text-align: center;
+      }
+
+      .counter {
+        cursor: pointer;
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        transition: opacity 0.6s ease;
+      }
+
+      .fadeout .counter {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      @keyframes fadein {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="counter" class="counter">000000</div>
+    </main>
+    <script>
+      const counter = document.getElementById('counter')
+      let value = 0
+      let revealed = false
+
+      function tick() {
+        if (revealed) return
+
+        value++
+        counter.textContent = value.toString().padStart(6, '0')
+
+        if (value % 333 === 0) {
+          counter.style.color = '#f0f'
+        } else {
+          counter.style.color = '#0ff'
+        }
+
+        const delay = 50 + Math.random() * 100
+        setTimeout(tick, delay)
+      }
+
+      counter.addEventListener('click', () => {
+        if (revealed) return
+
+        revealed = true
+        counter.parentElement.classList.add('fadeout')
+        setTimeout(() => {
+          counter.outerHTML = "<div class='clue'>COUNT</div>"
+        }, 1000)
+      })
+
+      setTimeout(tick, 1000)
+    </script>
+  </body>
+</html>

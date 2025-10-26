@@ -174,7 +174,7 @@ _[Link](https://weird-weboctober.vercel.app/23-style/)_
 **Day 24 - Counter**  
 A number ticks upward in the distance.  
 It’s counting something, but I don’t know what.  
-_(Link unlocks when built)_
+_[Link](https://weird-weboctober.vercel.app/24-counter/)_
 
 ---
 

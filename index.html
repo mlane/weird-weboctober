@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Weird Web October – Blink</title>
+    <title>Weird Web October – Index</title>
     <meta
       name="description"
-      content="Captain’s Log, Day 9 — I blink once and the horizon disappears. The word returns: BLINK."
+      content="Captain’s Log — 31 days of digital decay, discovery, and design. Enter the archive of Weird Web October."
     />
     <meta name="author" content="Marcus Lane" />
-    <link rel="stylesheet" href="../css/normalize.min.css" />
-    <link rel="stylesheet" href="../css/base.min.css" />
+    <link rel="stylesheet" href="./css/normalize.min.css" />
+    <link rel="stylesheet" href="./css/base.min.css" />
     <style>
       :root {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -18,88 +18,95 @@
       }
 
       body {
+        background: radial-gradient(circle at 50% 50%, #000, #020202);
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background: radial-gradient(circle at 50% 50%, #000, #030303);
-        color: #fff;
         overflow: hidden;
       }
 
-      .clue {
-        animation: fadein 1s forwards;
-        font-size: 1.5rem;
-        opacity: 0;
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-gap: 12px;
+        width: min(700px, 90vw);
         text-align: center;
       }
 
-      .blink {
-        position: relative;
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        background: #fff;
-        opacity: 0.08;
-        animation: pulse 3s infinite;
-        cursor: pointer;
-        transition: opacity 0.2s ease;
+      a {
+        display: block;
+        padding: 16px 0;
+        text-decoration: none;
+        color: #0ff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
       }
 
-      .blink.flash {
-        opacity: 1;
+      a:hover {
+        background: rgba(0, 255, 255, 0.06);
+        border-color: rgba(0, 255, 255, 0.4);
+        text-shadow: 0 0 6px #0ff;
+        transform: scale(1.05);
       }
 
-      .fadeout .blink {
-        opacity: 0;
-        transition: opacity 1s ease;
+      header {
+        position: absolute;
+        top: 40px;
+        text-align: center;
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+        opacity: 0.9;
       }
 
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.08;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.25;
-          transform: scale(0.96);
-        }
-      }
-
-      @keyframes fadein {
-        to {
-          opacity: 1;
-        }
+      footer {
+        position: absolute;
+        bottom: 20px;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 0.05em;
       }
     </style>
   </head>
   <body>
+    <header>Captain’s Log — 31 Days of Weird Web October</header>
     <main>
-      <div id="blink" class="blink"></div>
+      <!-- Days 1–31 -->
+      <a href="https://weird-weboctober.vercel.app/01-transparency/">01</a>
+      <a href="https://weird-weboctober.vercel.app/02-maps/">02</a>
+      <a href="https://weird-weboctober.vercel.app/03-scramble/">03</a>
+      <a href="https://weird-weboctober.vercel.app/04-filters/">04</a>
+      <a href="https://weird-weboctober.vercel.app/05-remix/">05</a>
+      <a href="https://weird-weboctober.vercel.app/06-solids/">06</a>
+      <a href="https://weird-weboctober.vercel.app/07-sub-optimal/">07</a>
+      <a href="https://weird-weboctober.vercel.app/08-containers/">08</a>
+      <a href="https://weird-weboctober.vercel.app/09-blink/">09</a>
+      <a href="https://weird-weboctober.vercel.app/10-warning/">10</a>
+      <a href="https://weird-weboctober.vercel.app/11-camera/">11</a>
+      <a href="https://weird-weboctober.vercel.app/12-battle/">12</a>
+      <a href="https://weird-weboctober.vercel.app/13-upside-down/">13</a>
+      <a href="https://weird-weboctober.vercel.app/14-doubles/">14</a>
+      <a href="https://weird-weboctober.vercel.app/15-unicode/">15</a>
+      <a href="https://weird-weboctober.vercel.app/16-transition/">16</a>
+      <a href="https://weird-weboctober.vercel.app/17-illumination/">17</a>
+      <a href="https://weird-weboctober.vercel.app/18-trading/">18</a>
+      <a href="https://weird-weboctober.vercel.app/19-bounce/">19</a>
+      <a href="https://weird-weboctober.vercel.app/20-hidden/">20</a>
+      <a href="https://weird-weboctober.vercel.app/21-language/">21</a>
+      <a href="https://weird-weboctober.vercel.app/22-memory/">22</a>
+      <a href="https://weird-weboctober.vercel.app/23-style/">23</a>
+      <a href="https://weird-weboctober.vercel.app/24-counter/">24</a>
+      <a href="https://weird-weboctober.vercel.app/25-empty/">25</a>
+      <a href="https://weird-weboctober.vercel.app/26-texture/">26</a>
+      <a href="https://weird-weboctober.vercel.app/27-spell/">27</a>
+      <a href="https://weird-weboctober.vercel.app/28-tables/">28</a>
+      <a href="https://weird-weboctober.vercel.app/29-surprise/">29</a>
+      <a href="https://weird-weboctober.vercel.app/30-deprecated/">30</a>
+      <a href="https://weird-weboctober.vercel.app/31-spooky/">31</a>
     </main>
-    <script>
-      const blink = document.getElementById('blink')
-
-      // create periodic flashes (the anomaly)
-      function cueFlash() {
-        blink.classList.add('flash')
-        setTimeout(() => {
-          blink.classList.remove('flash')
-          setTimeout(cueFlash, 1000)
-        }, 1000)
-      }
-
-      blink.addEventListener('click', () => {
-        if (!blink.classList.contains('flash')) return
-
-        blink.parentElement.classList.add('fadeout')
-        setTimeout(() => {
-          blink.parentElement.outerHTML = "<div class='clue'>BLINK</div>"
-        }, 1000)
-      })
-
-      setTimeout(cueFlash, 3000)
-    </script>
+    <footer>© Marcus Lane — Weird Web October</footer>
   </body>
 </html>
